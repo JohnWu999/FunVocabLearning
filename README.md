@@ -14,11 +14,36 @@
 
 Michelle 可以直接通过浏览器访问，无需安装任何软件。
 
+## 🔄 更新流程
+
+### 方式一：一键提交并部署（推荐）
+
+```bash
+./commit-and-deploy.sh "简短的更新说明"
+```
+
+会自动执行：`git add → commit → push → scp 部署 → 验证`
+
+### 方式二：分步操作
+
+```bash
+# 1. Git 版本管理
+git add -A
+git commit -m "更新说明"
+git push
+
+# 2. 部署到服务器
+./deploy.sh
+```
+
 ## 📁 项目结构
 
 ```
-├── index.html          # 主页面（词汇学习资料）
-└── README.md           # 本文件
+├── index.html              # 主页面（词汇学习资料）
+├── README.md               # 项目说明
+├── quizlet-research-report.md  # Quizlet 功能研究报告
+├── deploy.sh               # 部署脚本
+└── commit-and-deploy.sh    # 一键提交部署脚本
 ```
 
 ## ✍️ 内容特色
@@ -32,6 +57,7 @@ Michelle 可以直接通过浏览器访问，无需安装任何软件。
 
 | 日期 | 版本 | 说明 |
 |------|------|------|
+| 2026-05-09 | v1.1 | 添加 Quizlet 研究报告、一键部署脚本 |
 | 2026-05-08 | v1.0 | 项目初始化，完整词汇学习资料 |
 
 ---
